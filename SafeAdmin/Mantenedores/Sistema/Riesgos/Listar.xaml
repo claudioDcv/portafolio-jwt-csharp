@@ -1,0 +1,21 @@
+﻿<Window x:Class="SafeAdmin.Mantenedores.Sistema.Riesgos.Listar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SafeAdmin.Mantenedores.Sistema.Riesgos"
+        mc:Ignorable="d"
+        Style="{StaticResource wnd-metro}"
+        Title="Listar" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="grdTipoRiesgos" DataContext="{Binding Source=oTipoRiesgos}" ItemsSource="{Binding Source=oUsuarios}" HorizontalAlignment="Left" Height="311" Margin="79,98,0,0" VerticalAlignment="Top" Width="659" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="grdTipoRiesgos_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding id}" Visibility="Collapsed"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}"/>
+                <DataGridTextColumn Header="Codigo" Binding="{Binding codigo}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Crear Nuevo" HorizontalAlignment="Left" Margin="79,62,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Style="{StaticResource btn-info}" />
+
+    </Grid>
+</Window>

@@ -1,0 +1,20 @@
+﻿<Window x:Class="SafeAdmin.Mantenedores.Sistema.Examenes.Listar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SafeAdmin.Mantenedores.Sistema.Examenes"
+        mc:Ignorable="d"
+        Title="Listar" Height="450" Width="800">
+    <Grid>
+        <DataGrid Name="grdExamenes" ItemsSource="{Binding Source=oExamenes}" HorizontalAlignment="Left" Height="231" Margin="176,178,0,0" VerticalAlignment="Top" Width="433" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding id}" Visibility="Collapsed"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}"/>
+                <DataGridTextColumn Header="Codigo" Binding="{Binding codigo}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="btnNuevo" Content="Crear Nuevo" HorizontalAlignment="Left" Margin="176,153,0,0" VerticalAlignment="Top" Width="75" Click="btnNuevo_Click" Background="#17A2B8" Foreground="White" />
+
+    </Grid>
+</Window>

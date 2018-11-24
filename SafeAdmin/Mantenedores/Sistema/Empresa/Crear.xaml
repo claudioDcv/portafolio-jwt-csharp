@@ -1,0 +1,26 @@
+﻿<Window x:Class="SafeAdmin.Mantenedores.Sistema.Empresa.Crear"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SafeAdmin.Mantenedores.Sistema.Empresa"
+        mc:Ignorable="d"
+        Title="Crear" Height="450" Width="462.97">
+    <Grid>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="42,146,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="23" Margin="197,115,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" Visibility="Collapsed"/>
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="23" Margin="197,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204"/>
+        <Button Content="Guardar" HorizontalAlignment="Left" Margin="93,304,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Background="#28A745" Foreground="White"/>
+        <Label Content="Dirección" HorizontalAlignment="Left" Margin="42,181,0,0" VerticalAlignment="Top"/>
+        <Label Content="Telefóno" HorizontalAlignment="Left" Margin="42,212,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDireccion" HorizontalAlignment="Left" Height="23" Margin="197,181,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204"/>
+        <TextBox x:Name="txtTelefono" HorizontalAlignment="Left" Height="23" Margin="197,216,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="197,244,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204"/>
+        <TextBlock Name="lblTitulo" HorizontalAlignment="Left" Height="34" Margin="120,10,0,0" TextWrapping="Wrap" Text="Crear Empresa" VerticalAlignment="Top" Width="221" FontWeight="Bold" FontSize="22"/>
+        <Button Name="btnTrabajador" Content="Administrar Trabajadores" HorizontalAlignment="Left" Margin="224,304,0,0" VerticalAlignment="Top" Width="146" Click="btnTrabajador_Click" Background="#17A2B8" Foreground="White"/>
+        <Button Name="btnInstalacion" Content="Administrar Instalaciones" HorizontalAlignment="Left" Margin="224,329,0,0" VerticalAlignment="Top" Width="146" Click="btnInstalacion_Click" Background="#17A2B8" Foreground="White"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="42,240,0,0" VerticalAlignment="Top"/>
+        
+
+    </Grid>
+</Window>
