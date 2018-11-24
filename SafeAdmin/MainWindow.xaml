@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:SafeAdmin"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
+        Style="{StaticResource wnd-metro}"
         Title="MainWindow" Height="463.534" Width="800">
     <Grid>
         <Menu>

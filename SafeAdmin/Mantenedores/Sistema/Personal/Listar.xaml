@@ -18,7 +18,7 @@
                 <DataGridTextColumn Header="Email" Binding="{Binding email}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Crear Nuevo" HorizontalAlignment="Left" Margin="79,73,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Background="#17A2B8" Foreground="White"/>
+        <Button Content="Crear Nuevo" HorizontalAlignment="Left" Margin="79,59,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Style="{StaticResource btn-info}"/>
 
     </Grid>
 </Window>

@@ -14,7 +14,7 @@
         <TextBox Name="txtIDEmpresa" Visibility="Collapsed" HorizontalAlignment="Left" Height="23" Margin="155,253,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="txtNombre" HorizontalAlignment="Left" Height="23" Margin="155,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="txtCodigo" HorizontalAlignment="Left" Height="23" Margin="155,172,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="235,261,0,0" VerticalAlignment="Top" Width="75" Click="btnGuardar_Click" Background="#28A745" Foreground="White"/>
+        <Button Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="235,261,0,0" VerticalAlignment="Top" Width="75" Click="btnGuardar_Click"  Style="{StaticResource btn-info}"/>
 
 
 

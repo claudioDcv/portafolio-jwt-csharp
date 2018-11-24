@@ -13,6 +13,6 @@
         <TextBox Name="txtID" Visibility="Collapsed" Text="0"/>
         <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="23" Margin="197,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtCodigo" HorizontalAlignment="Left" Height="23" Margin="197,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Guardar" HorizontalAlignment="Left" Margin="137,214,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Background="#28A745" Foreground="White"/>
+        <Button Content="Guardar" HorizontalAlignment="Left" Margin="137,214,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Style="{StaticResource btn-success}" />
     </Grid>
 </Window>

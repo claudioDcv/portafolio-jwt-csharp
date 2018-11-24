@@ -15,7 +15,7 @@
                 <DataGridTextColumn Header="Código" Binding="{Binding codigo}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Name="btnCrear" Content="Crear Nuevo" HorizontalAlignment="Left" Margin="157,120,0,0" VerticalAlignment="Top" Width="75" Click="btnCrear_Click" Foreground="White" Background="#17A2B8"/>
+        <Button Name="btnCrear" Content="Crear Nuevo" HorizontalAlignment="Left" Margin="157,110,0,0" VerticalAlignment="Top" Width="75" Click="btnCrear_Click" Style="{StaticResource btn-info}" />
 
     </Grid>
 </Window>
