@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace DTO.ApiResponse
 {
-    public class ResponseSaveUsuario
+    public class ResponseSaveUsuario : ResponseGeneral
     {
-        public string message { get; set; }
-        public string status { get; set; }
-        public int code { get; set; }
         public int obj { get; set; }
     }
 }

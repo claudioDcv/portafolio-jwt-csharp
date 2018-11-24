@@ -7,12 +7,9 @@ using DTO.Modelo;
 
 namespace DTO.ApiResponse
 {
-    public class ResponseInstalacion
+    public class ResponseInstalacion : ResponseGeneral
     {
-        public string message { get; set; }
-        public string status { get; set; }
         public Instalacion obj { get; set; }
-        public int code { get; set; }
 
         public ResponseInstalacion()
         {

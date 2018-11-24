@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace DTO.ApiResponse
 {
-    class ResponsePerfil
+    class ResponsePerfil : ResponseGeneral
     {
-        public string message { get; set; }
-        public string status { get; set; }
-        public int code { get; set; }
         public Perfil obj { get; set; }
     }
 }

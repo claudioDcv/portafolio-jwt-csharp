@@ -7,11 +7,8 @@ using DTO.Modelo;
 
 namespace DTO.ApiResponse
 {
-    public class ResponsePerfiles
+    public class ResponsePerfiles : ResponseGeneral
     {
-        public string message { get; set; }
-        public string status { get; set; }
-        public int code { get; set; }
         public IList<Perfil> obj { get; set; }
     }
 }
