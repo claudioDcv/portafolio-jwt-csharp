@@ -200,6 +200,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Mantenedores\Sistema\Usuarios\SeleccionarEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Mantenedores\Sistema\Usuarios\Validar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -241,6 +245,9 @@
     </Compile>
     <Compile Include="Mantenedores\Sistema\Usuarios\Listar.xaml.cs">
       <DependentUpon>Listar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\Sistema\Usuarios\SeleccionarEmpresa.xaml.cs">
+      <DependentUpon>SeleccionarEmpresa.xaml</DependentUpon>
     </Compile>
     <Compile Include="Mantenedores\Sistema\Usuarios\Validar.xaml.cs">
       <DependentUpon>Validar.xaml</DependentUpon>

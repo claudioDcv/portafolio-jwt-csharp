@@ -72,14 +72,17 @@ namespace SafeAdmin.Mantenedores.Sistema.Instalacion
                 oInstalacion.nombre = txtNombre.Text;
                 oInstalacion.codigo = txtCodigo.Text;
                 oInstalacion.empresaEntity.id = Convert.ToInt32(txtIDEmpresa.Text);
-                int respuesta = instalacionServicios.create(oInstalacion);
-                if (respuesta > 0)
+                string respuesta = instalacionServicios.create(oInstalacion);
+                int id = default(int);
+                if (respuesta.Length > 0 && int.TryParse(respuesta, out id))
                 {
-                    MessageBox.Show("Instalación creada con exito.");
-                    Listar listar = new Listar(this.hash, this.empresaId);
-                    listar.Show();
-                    this.Close();
-
+                    if(id > 0)
+                    {
+                        MessageBox.Show("Instalación creada con exito.");
+                        Listar listar = new Listar(this.hash, this.empresaId);
+                        listar.Show();
+                        this.Close();
+                    }
                 }
                 else
                 {

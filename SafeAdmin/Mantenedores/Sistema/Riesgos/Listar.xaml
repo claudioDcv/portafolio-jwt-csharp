@@ -6,16 +6,17 @@
         xmlns:local="clr-namespace:SafeAdmin.Mantenedores.Sistema.Riesgos"
         mc:Ignorable="d"
         Style="{StaticResource wnd-metro}"
-        Title="Listar" Height="450" Width="800">
+        Title="Listar" Height="515" Width="408">
     <Grid>
-        <DataGrid x:Name="grdTipoRiesgos" DataContext="{Binding Source=oTipoRiesgos}" ItemsSource="{Binding Source=oUsuarios}" HorizontalAlignment="Left" Height="311" Margin="79,98,0,0" VerticalAlignment="Top" Width="659" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="grdTipoRiesgos_SelectionChanged">
+        <DataGrid x:Name="grdTipoRiesgos" DataContext="{Binding Source=oTipoRiesgos}" ItemsSource="{Binding Source=oUsuarios}" HorizontalAlignment="Left" Height="311" Margin="40,138,0,0" VerticalAlignment="Top" Width="317" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="grdTipoRiesgos_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding id}" Visibility="Collapsed"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}"/>
                 <DataGridTextColumn Header="Codigo" Binding="{Binding codigo}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Crear Nuevo" HorizontalAlignment="Left" Margin="79,62,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Style="{StaticResource btn-info}" />
+        <Button Content="Crear Nuevo" HorizontalAlignment="Left" Margin="40,103,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Style="{StaticResource btn-info}" RenderTransformOrigin="0.48,1.2" />
+        <TextBlock HorizontalAlignment="Left" Margin="40,40,0,0" TextWrapping="NoWrap" Text="Tipos de Riesgo" VerticalAlignment="Top" FontWeight="Bold" FontSize="22"/>
 
     </Grid>
 </Window>

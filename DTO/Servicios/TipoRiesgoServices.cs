@@ -27,7 +27,7 @@ namespace DTO.Servicios
             return oTipoRiesgos.code == 200 ? oTipoRiesgos.obj : new List<TipoRiesgo>();
         }
 
-        public int create(TipoRiesgo oTipoRiesgo)
+        public string create(TipoRiesgo oTipoRiesgo)
         {
             ResponseSaveUsuario oUsuario = new ResponseSaveUsuario();
             object aux = new
@@ -38,7 +38,7 @@ namespace DTO.Servicios
             string json = JsonConvert.SerializeObject(aux);
             string content = consumer.getPost("api/" + this.endpoint, json);
             oUsuario = JsonConvert.DeserializeObject<ResponseSaveUsuario>(content);
-            return oUsuario.code == 200 ? oUsuario.obj : 0;
+            return oUsuario.code == 200 ? oUsuario.obj : "0";
         }
 
         public TipoRiesgo getOne(int idTipoRiesgo)

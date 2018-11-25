@@ -8,6 +8,6 @@ namespace DTO.ApiResponse
 {
     public class ResponseSaveUsuario : ResponseGeneral
     {
-        public int obj { get; set; }
+        public string obj { get; set; }
     }
 }

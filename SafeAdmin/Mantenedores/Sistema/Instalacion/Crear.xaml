@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SafeAdmin.Mantenedores.Sistema.Instalacion"
         mc:Ignorable="d"
-        Title="Crear" Height="450" Width="800">
+        Title="Crear" Height="301" Width="352">
     <Grid>
-        <TextBlock Name="lblTitulo" HorizontalAlignment="Left" Margin="250,33,0,0" TextWrapping="Wrap" Text="Crear Instalación" VerticalAlignment="Top" Height="27" Width="188" FontWeight="Bold" FontSize="22"/>
-        <Label Content="Nombre" HorizontalAlignment="Left" Margin="67,134,0,0" VerticalAlignment="Top"/>
-        <Label Content="Código" HorizontalAlignment="Left" Margin="72,168,0,0" VerticalAlignment="Top"/>
+        <TextBlock Name="lblTitulo" HorizontalAlignment="Left" Margin="40,40,0,0" TextWrapping="Wrap" Text="Crear Instalación" VerticalAlignment="Top" Height="27" Width="188" FontWeight="Bold" FontSize="22"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="40,114,0,0" VerticalAlignment="Top"/>
+        <Label Content="Código" HorizontalAlignment="Left" Margin="40,149,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.059,0.433"/>
         <TextBox Name="txtID" Visibility="Collapsed" HorizontalAlignment="Left" Height="23" Margin="155,253,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="txtIDEmpresa" Visibility="Collapsed" HorizontalAlignment="Left" Height="23" Margin="155,253,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="txtNombre" HorizontalAlignment="Left" Height="23" Margin="155,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="txtCodigo" HorizontalAlignment="Left" Height="23" Margin="155,172,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="235,261,0,0" VerticalAlignment="Top" Width="75" Click="btnGuardar_Click"  Style="{StaticResource btn-info}"/>
+        <TextBox Name="txtNombre" HorizontalAlignment="Left" Height="23" Margin="101,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="198"/>
+        <TextBox Name="txtCodigo" HorizontalAlignment="Left" Height="23" Margin="101,152,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="198"/>
+        <Button Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="101,196,0,0" VerticalAlignment="Top" Width="198" Click="btnGuardar_Click"  Style="{StaticResource btn-info}"/>
 
 
 

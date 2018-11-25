@@ -37,13 +37,17 @@ namespace SafeAdmin.Mantenedores.Sistema.Examenes
                 oExamen.id = Convert.ToInt32(txtID.Text);
                 oExamen.nombre = txtNombre.Text;
                 oExamen.codigo = txtCodigo.Text;
-                int resultado = examenServicios.create(oExamen);
-                if(resultado > 0)
+                string resultado = examenServicios.create(oExamen);
+                int id = default(int);
+                if(resultado.Length > 0 && int.TryParse(resultado, out id))
                 {
-                    MessageBox.Show("Examen guardado con exito.");
-                    Listar listar = new Listar(this.hash);
-                    listar.Show();
-                    this.Close();
+                    if(id > 0)
+                    {
+                        MessageBox.Show("Examen guardado con exito.");
+                        Listar listar = new Listar(this.hash);
+                        listar.Show();
+                        this.Close();
+                    }
                 }
                 else
                 {

@@ -35,34 +35,34 @@ namespace DTO.Servicios
             return oUsuario.code == 200 ? oUsuario.obj : new Usuario();
         }
 
-        public int create(Usuario user)
+        public string create(Usuario user)
         {
             ResponseSaveUsuario oUsuario = new ResponseSaveUsuario();
-            object aux = new { email = user.email, name = user.name, surname = user.surname, password = user.hash };
+            object aux = new { email = user.email, name = user.name, surname = user.surname, password = user.hash, empresaFk = user.empresaFk };
             string json = JsonConvert.SerializeObject(aux);
             string content = consumer.getPost(this.endpoint + "/register", json);
             oUsuario = JsonConvert.DeserializeObject<ResponseSaveUsuario>(content);
-            return oUsuario.code == 200 ? oUsuario.obj : 0;
+            return oUsuario.code == 200 ? oUsuario.obj : "0";
         }
 
-        public int asignProfiles(Usuario user)
+        public string asignProfiles(Usuario user)
         {
             ResponseSaveUsuario oUsuario = new ResponseSaveUsuario();
             object aux = new { usuario = user.id, perfiles = user.profiles.Select(x => x.id).ToArray() };
             string json = JsonConvert.SerializeObject(aux);
             string content = consumer.getPost(this.endpoint + "/asignar-perfiles", json);
             oUsuario = JsonConvert.DeserializeObject<ResponseSaveUsuario>(content);
-            return oUsuario.code == 200 ? oUsuario.obj : 0;
+            return oUsuario.code == 200 ? oUsuario.obj : "0";
         }
 
-        public int update(Usuario user)
+        public string update(Usuario user)
         {
             ResponseSaveUsuario oUsuario = new ResponseSaveUsuario();
-            object aux = new { name = user.name, surname = user.surname, email = user.email };
+            object aux = new { name = user.name, surname = user.surname, email = user.email, empresaFK = user.empresaFk };
             string json = JsonConvert.SerializeObject(aux);
             string content = consumer.getPut(this.endpoint + "/" + user.id, json);
             oUsuario = JsonConvert.DeserializeObject<ResponseSaveUsuario>(content);
-            return oUsuario.code == 200 ? oUsuario.obj : 0;
+            return oUsuario.code == 200 ? oUsuario.obj : "0";
         }
 
         public Usuario validateProfile()

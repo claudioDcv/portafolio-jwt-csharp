@@ -48,6 +48,7 @@ namespace SafeAdmin.Mantenedores.Sistema.Usuarios
             {
                 Services.UsuarioServices oUsuarioServicios = new Services.UsuarioServices(hash);
                 Services.PerfilServices oPerfilServicios = new Services.PerfilServices(hash);
+                Services.EmpresaServices oEmpresaServicios = new Services.EmpresaServices(hash);
                 Usuario oUsuario = oUsuarioServicios.getOne(id);
                 IList<Perfil> oPerfiles = oPerfilServicios.getAll();
                 lstPerfiles.ItemsSource = oPerfiles;
@@ -55,20 +56,24 @@ namespace SafeAdmin.Mantenedores.Sistema.Usuarios
                 txtEmail.Text = oUsuario.email;
                 txtNombre.Text = oUsuario.name;
                 txtApellido.Text = oUsuario.surname;
+                if(oUsuario.empresaFk > 0)
+                {
+                    lblEmpresa.Text = "Empresa Asignada: " + oEmpresaServicios.getOne(oUsuario.empresaFk).nombre;
+                }
                 lblPassword.Visibility = Visibility.Collapsed;
                 txtPassword.Visibility = Visibility.Collapsed;
-                foreach (var tmp in lstPerfiles.Items)
-                {
-                    if(oUsuario.profiles.Any(x => x.id == ((Perfil)tmp).id))
-                    {
-                        int indice = lstPerfiles.Items.IndexOf(tmp);
-                        lstPerfiles.SelectedItems.Add(tmp);
-                        //lstPerfiles.SelectedIndex += indice;
-                    }
-                }
+                //foreach (var tmp in lstPerfiles.Items)
+                //{
+                //    if(oUsuario.profiles.Any(x => x.id == ((Perfil)tmp).id))
+                //    {
+                //        int indice = lstPerfiles.Items.IndexOf(tmp);
+                //        lstPerfiles.SelectedItems.Add(tmp);
+                //    }
+                //}
                 lstPerfiles.SelectedItems.Add(oUsuario.profiles);
                 lblTitulo.Content = "Editar Usuario";
                 btnBloquear.Visibility = Visibility.Visible;
+                txtEmpresaID.Text = oUsuario.empresaFk.ToString();
             }
             catch(Exception ex)
             {
@@ -87,18 +92,23 @@ namespace SafeAdmin.Mantenedores.Sistema.Usuarios
                 oUsuario.surname = txtApellido.Text;
                 oUsuario.email = txtEmail.Text;
                 oUsuario.hash = txtPassword.Password;
+                oUsuario.empresaFk = Convert.ToInt32(txtEmpresaID.Text);
                 foreach(var tmp in lstPerfiles.SelectedItems)
                 {
                     oUsuario.profiles.Add((Perfil)tmp);
                 }
-                int respuesta = default(int);
+                string respuesta = string.Empty;
+                int id = default(int);
                 if (oUsuario.id > 0)
                 {
                     respuesta = usuarioServices.update(oUsuario);
-                    if(respuesta == 0)
+                    if(int.TryParse(respuesta, out id))
                     {
-                        MessageBox.Show("El usuario no se puede actualizar con los datos ingresados.");
-                        return;
+                        if (id == 0)
+                        {
+                            MessageBox.Show("El usuario no se puede actualizar con los datos ingresados.");
+                            return;
+                        }
                     }
                 }
                 else
@@ -117,14 +127,21 @@ namespace SafeAdmin.Mantenedores.Sistema.Usuarios
                 }
                 else
                 {
-                    if (respuesta > 0)
+                    if (respuesta.Length > 0 && int.TryParse(respuesta, out id))
                     {
-                        oUsuario.id = respuesta;
-                        respuesta = usuarioServices.asignProfiles(oUsuario);
-                        MessageBox.Show("Usuario guardado con éxito.");
-                        Listar listar = new Listar(hash);
-                        listar.Show();
-                        this.Close();
+                        if(id > 0)
+                        {
+                            oUsuario.id = id;
+                            respuesta = usuarioServices.asignProfiles(oUsuario);
+                            MessageBox.Show("Usuario guardado con éxito.");
+                            Listar listar = new Listar(hash);
+                            listar.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Usuario no se pudo guardar.");
+                        }
                     }
                     else
                     {
@@ -146,14 +163,17 @@ namespace SafeAdmin.Mantenedores.Sistema.Usuarios
                 Usuario oUsuario = new Usuario();
                 oUsuario.id = txtID.Text != "" ? Convert.ToInt32(txtID.Text) : 0;
                 oUsuario.profiles = new List<Perfil>();
-                int respuesta = usuarioServices.asignProfiles(oUsuario);
-
-                if (respuesta > 0)
+                string respuesta = usuarioServices.asignProfiles(oUsuario);
+                int id = default(int);
+                if (respuesta.Length > 0 && int.TryParse(respuesta, out id))
                 {
-                    MessageBox.Show("Usuario bloqueado con éxito.");
-                    Listar listar = new Listar(hash);
-                    listar.Show();
-                    this.Close();
+                    if(id > 0)
+                    {
+                        MessageBox.Show("Usuario bloqueado con éxito.");
+                        Listar listar = new Listar(hash);
+                        listar.Show();
+                        this.Close();
+                    }
                 }
             }
             catch (Exception ex)
@@ -219,5 +239,52 @@ namespace SafeAdmin.Mantenedores.Sistema.Usuarios
             }
         }
 
+        private void lstPerfiles_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                IList<Perfil> oPerfiles = new List<Perfil>();
+                foreach (var tmp in lstPerfiles.SelectedItems)
+                {
+                    oPerfiles.Add((Perfil)tmp);
+                }
+                if(oPerfiles.Any(x => x.naturalKey == "ADMIN_EMPRESA"))
+                {
+                    if (txtEmpresaID.Text == "0")
+                    {
+                        SeleccionarEmpresa seleccionarEmpresa = new SeleccionarEmpresa(this.hash, ref this.txtEmpresaID);
+                        seleccionarEmpresa.Show();
+                    }
+                }
+                else
+                {
+                    txtEmpresaID.Text = "0";
+                    lblEmpresa.Text = "Empresa Asignada: Sin Asignar";
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void txtEmpresaID_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                string id = txtEmpresaID.Text;
+                Services.EmpresaServices oEmpresaServicios = new Services.EmpresaServices(this.hash);
+                if (id == "0")
+                {
+                    lblEmpresa.Text = "Empresa Asignada: Sin Asignar";
+                }
+                else
+                {
+                    lblEmpresa.Text = "Empresa Asignada: " + oEmpresaServicios.getOne(Convert.ToInt32(id)).nombre;
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }

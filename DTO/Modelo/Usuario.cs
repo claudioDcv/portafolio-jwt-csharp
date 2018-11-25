@@ -14,6 +14,7 @@ namespace DTO.Modelo
         public string email { get; set; }
         public string hash { get; set; }
         public IList<Perfil> profiles { get; set; }
+        public int empresaFk { get; set; }
 
         public Usuario()
         {
@@ -23,6 +24,7 @@ namespace DTO.Modelo
             this.email = string.Empty;
             this.hash = string.Empty;
             this.profiles = new List<Perfil>();
+            this.empresaFk = default(int);
         }
     }
 }

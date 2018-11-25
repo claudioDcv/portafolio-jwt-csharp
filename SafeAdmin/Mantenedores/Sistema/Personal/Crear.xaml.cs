@@ -96,7 +96,7 @@ namespace SafeAdmin.Mantenedores.Sistema.Personal
                 }
                 if (oTrabajador.id > 0)
                 {
-                    int respuesta = trabajadorServicios.assignRisks(oTrabajador);
+                    string respuesta = trabajadorServicios.assignRisks(oTrabajador);
                     MessageBox.Show("Riesgos asignados con exito.");
                     Listar listarTrabajadores = new Listar(this.hash, oTrabajador.empresaEntity.id);
                     listarTrabajadores.Show();
@@ -104,10 +104,12 @@ namespace SafeAdmin.Mantenedores.Sistema.Personal
                 }
                 else
                 {
-                    int respuesta = trabajadorServicios.create(oTrabajador);
-                    if (respuesta > 0)
+                    string respuesta = trabajadorServicios.create(oTrabajador);
+                    int id = default(int);
+                    if (respuesta.Length > 0 && int.TryParse(respuesta, out id))
                     {
-                        oTrabajador.id = respuesta;
+
+                        oTrabajador.id = id;
                         respuesta = trabajadorServicios.assignRisks(oTrabajador);
                         MessageBox.Show("Trabajador creado con exito.");
                         Listar listarTrabajadores = new Listar(this.hash, oTrabajador.empresaEntity.id);

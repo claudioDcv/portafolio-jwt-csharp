@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SafeAdmin.Mantenedores.Sistema.Personal"
         mc:Ignorable="d"
-        Title="Listar" Height="450" Width="800">
+        Title="Listar" Height="508" Width="755">
     <Grid>
-        <DataGrid x:Name="grdTrabajadores" DataContext="{Binding Source=oTrabajadores}" ItemsSource="{Binding Source=oTrabajadores}" HorizontalAlignment="Left" Height="311" Margin="79,98,0,0" VerticalAlignment="Top" Width="659" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="grdTrabajadores_SelectionChanged">
+        <DataGrid x:Name="grdTrabajadores" DataContext="{Binding Source=oTrabajadores}" ItemsSource="{Binding Source=oTrabajadores}" HorizontalAlignment="Left" Height="311" Margin="40,138,0,0" VerticalAlignment="Top" Width="659" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="grdTrabajadores_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Visibility="Collapsed" Binding="{Binding id}"/>
                 <DataGridTextColumn Header="IDEmpresa" Visibility="Collapsed" Binding="{Binding empresaEntity.id}"></DataGridTextColumn>
@@ -18,7 +18,8 @@
                 <DataGridTextColumn Header="Email" Binding="{Binding email}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Crear Nuevo" HorizontalAlignment="Left" Margin="79,59,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Style="{StaticResource btn-info}"/>
+        <Button Content="Crear Nuevo" HorizontalAlignment="Left" Margin="40,103,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Style="{StaticResource btn-info}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="40,40,0,0" TextWrapping="NoWrap" Text="Personal" VerticalAlignment="Top" FontWeight="Bold" FontSize="22"/>
 
     </Grid>
 </Window>

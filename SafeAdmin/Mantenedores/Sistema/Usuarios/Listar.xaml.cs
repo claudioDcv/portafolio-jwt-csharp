@@ -30,11 +30,27 @@ namespace SafeAdmin.Mantenedores.Sistema.Usuarios
             try
             {
                 Services.UsuarioServices oUsuarioServicios = new Services.UsuarioServices(hash);
-
+                Services.EmpresaServices oEmpresaServicios = new Services.EmpresaServices(hash);
                 IList<Usuario> oUsuarios = oUsuarioServicios.getAll();
-                grdUsuarios.ItemsSource = oUsuarios;
+                IList<UsuarioEmpresa> oUsuariosEmpresa = new List<UsuarioEmpresa>();
+                foreach (Usuario item in oUsuarios)
+                {
+                    UsuarioEmpresa oUsuarioEmpresa = new UsuarioEmpresa();
+                    oUsuarioEmpresa.id = item.id;
+                    oUsuarioEmpresa.name = item.name;
+                    oUsuarioEmpresa.surname = item.surname;
+                    oUsuarioEmpresa.email = item.email;
+                    oUsuarioEmpresa.profiles = item.profiles;
+                    oUsuarioEmpresa.empresaFk = item.empresaFk;
+                    if(oUsuarioEmpresa.empresaFk > 0)
+                    {
+                        oUsuarioEmpresa.nombreEmpresa = oEmpresaServicios.getOne(oUsuarioEmpresa.empresaFk).nombre;
+                    }
+                    oUsuariosEmpresa.Add(oUsuarioEmpresa);
+                }
+                grdUsuarios.ItemsSource = oUsuariosEmpresa;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
             }

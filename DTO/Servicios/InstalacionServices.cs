@@ -27,7 +27,7 @@ namespace DTO.Servicios
             return oInstalaciones.code == 200 ? oInstalaciones.obj : new List<Instalacion>();
         }
 
-        public int create(Instalacion oInstalacion)
+        public string create(Instalacion oInstalacion)
         {
             ResponseSaveUsuario oResponse = new ResponseSaveUsuario();
             object aux = new
@@ -39,7 +39,7 @@ namespace DTO.Servicios
             string json = JsonConvert.SerializeObject(aux);
             string content = consumer.getPost(this.endpoint, json);
             oResponse = JsonConvert.DeserializeObject<ResponseSaveUsuario>(content);
-            return oResponse.code == 200 ? oResponse.obj : 0;
+            return oResponse.code == 200 ? oResponse.obj : "0";
         }
 
         public Instalacion getOne(int instalacionId)

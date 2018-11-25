@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SafeAdmin.Mantenedores.Sistema.Examenes"
         mc:Ignorable="d"
-        Title="Crear" Height="390.789" Width="487.03">
+        Title="Crear" Height="273.789" Width="307.03">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Height="40" Margin="98,28,0,0" TextWrapping="Wrap" Text="Crear Examenes" VerticalAlignment="Top" Width="284" FontWeight="Bold" FontSize="22"/>
-        <Label Content="Nombre" HorizontalAlignment="Left" Margin="42,115,0,0" VerticalAlignment="Top"/>
-        <Label Content="Código" HorizontalAlignment="Left" Margin="42,146,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Height="40" Margin="40,40,0,0" TextWrapping="Wrap" Text="Crear Examen" VerticalAlignment="Top" Width="153" FontWeight="Bold" FontSize="22"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="40,108,0,0" VerticalAlignment="Top"/>
+        <Label Content="Código" HorizontalAlignment="Left" Margin="40,143,0,0" VerticalAlignment="Top"/>
         <TextBox Name="txtID" Visibility="Collapsed" Text="0"/>
-        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="23" Margin="197,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtCodigo" HorizontalAlignment="Left" Height="23" Margin="197,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Guardar" HorizontalAlignment="Left" Margin="137,214,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Style="{StaticResource btn-success}" />
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="23" Margin="101,108,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="156"/>
+        <TextBox x:Name="txtCodigo" HorizontalAlignment="Left" Height="23" Margin="101,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="156"/>
+        <Button Content="Guardar" HorizontalAlignment="Left" Margin="101,178,0,0" VerticalAlignment="Top" Width="156" Click="Button_Click" Style="{StaticResource btn-success}" RenderTransformOrigin="-0.147,-1.133" />
     </Grid>
 </Window>

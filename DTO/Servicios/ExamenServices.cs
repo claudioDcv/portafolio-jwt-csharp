@@ -27,7 +27,7 @@ namespace DTO.Servicios
             return oExamenes.code == 200 ? oExamenes.obj : new List<Examen>();
         }
 
-        public int create(Examen oExamen)
+        public string create(Examen oExamen)
         {
             ResponseSaveUsuario oUsuario = new ResponseSaveUsuario();
             object aux = new
@@ -38,7 +38,7 @@ namespace DTO.Servicios
             string json = JsonConvert.SerializeObject(aux);
             string content = consumer.getPost("api/" + this.endpoint, json);
             oUsuario = JsonConvert.DeserializeObject<ResponseSaveUsuario>(content);
-            return oUsuario.code == 200 ? oUsuario.obj : 0;
+            return oUsuario.code == 200 ? oUsuario.obj : "0";
         }
     }
 }

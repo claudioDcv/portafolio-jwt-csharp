@@ -43,7 +43,7 @@ namespace DTO.Servicios
             return oTrabajador;
         }
 
-        public int create(Trabajador oTrabajador)
+        public string create(Trabajador oTrabajador)
         {
             ResponseSaveUsuario oResponse = new ResponseSaveUsuario();
             object aux = new
@@ -58,10 +58,10 @@ namespace DTO.Servicios
             string json = JsonConvert.SerializeObject(aux);
             string content = consumer.getPost(this.endpoint, json);
             oResponse = JsonConvert.DeserializeObject<ResponseSaveUsuario>(content);
-            return oResponse.code == 200 ? oResponse.obj : 0;
+            return oResponse.code == 200 ? oResponse.obj : "0";
         }
 
-        public int assignRisks(Trabajador oTrabajador)
+        public string assignRisks(Trabajador oTrabajador)
         {
             ResponseSaveUsuario oResponse = new ResponseSaveUsuario();
             object aux = new
@@ -72,7 +72,7 @@ namespace DTO.Servicios
             string json = JsonConvert.SerializeObject(aux);
             string content = consumer.getPost(this.endpoint+ "/asignar-riesgos", json);
             oResponse = JsonConvert.DeserializeObject<ResponseSaveUsuario>(content);
-            return oResponse.code == 200 ? oResponse.obj : 0;
+            return oResponse.code == 200 ? oResponse.obj : "0";
         }
     }
 }

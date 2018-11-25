@@ -45,13 +45,17 @@ namespace SafeAdmin.Mantenedores.Sistema.Riesgos
                 oTipoRiesgo.id = Convert.ToInt32(txtID.Text);
                 oTipoRiesgo.nombre = txtNombre.Text;
                 oTipoRiesgo.codigo = txtCodigo.Text;
-                int resultado = tipoRiesgoServicios.create(oTipoRiesgo);
-                if (resultado > 0)
+                string resultado = tipoRiesgoServicios.create(oTipoRiesgo);
+                int id = default(int);
+                if (resultado.Length > 0 && int.TryParse(resultado, out id))
                 {
-                    MessageBox.Show("Tipo de Riesgo guardado con exito.");
-                    Listar listar = new Listar(this.hash);
-                    listar.Show();
-                    this.Close();
+                    if(id > 0)
+                    {
+                        MessageBox.Show("Tipo de Riesgo guardado con exito.");
+                        Listar listar = new Listar(this.hash);
+                        listar.Show();
+                        this.Close();
+                    }
                 }
                 else
                 {

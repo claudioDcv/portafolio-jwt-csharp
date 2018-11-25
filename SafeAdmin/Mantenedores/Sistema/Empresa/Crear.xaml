@@ -5,22 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SafeAdmin.Mantenedores.Sistema.Empresa"
         mc:Ignorable="d"
-        Title="Crear" Height="450" Width="462.97">
+        Title="Crear" Height="490" Width="369.97">
     <Grid>
-        <Label Content="Nombre" HorizontalAlignment="Left" Margin="42,146,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="40,125,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.018,0.533"/>
         <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="23" Margin="197,115,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" Visibility="Collapsed"/>
-        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="23" Margin="197,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204"/>
-        <Button Content="Guardar" HorizontalAlignment="Left" Margin="93,304,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Style="{StaticResource btn-success}" />
-        <Label Content="Dirección" HorizontalAlignment="Left" Margin="42,181,0,0" VerticalAlignment="Top"/>
-        <Label Content="Telefóno" HorizontalAlignment="Left" Margin="42,212,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtDireccion" HorizontalAlignment="Left" Height="23" Margin="197,181,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204"/>
-        <TextBox x:Name="txtTelefono" HorizontalAlignment="Left" Height="23" Margin="197,216,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="197,244,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204"/>
-        <TextBlock Name="lblTitulo" HorizontalAlignment="Left" Height="34" Margin="124,11,0,0" TextWrapping="Wrap" Text="Crear Empresa" VerticalAlignment="Top" Width="221" FontWeight="Bold" FontSize="22"/>
-        <Button Name="btnTrabajador" Content="Administrar Trabajadores" HorizontalAlignment="Left" Margin="224,304,0,0" VerticalAlignment="Top" Width="146" Click="btnTrabajador_Click" Style="{StaticResource btn-info}" />
-        <Button Name="btnInstalacion" Content="Administrar Instalaciones" HorizontalAlignment="Left" Margin="224,339,0,0" VerticalAlignment="Top" Width="146" Click="btnInstalacion_Click" Style="{StaticResource btn-info}" />
-        <Label Content="Email" HorizontalAlignment="Left" Margin="42,240,0,0" VerticalAlignment="Top"/>
-        
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="23" Margin="113,125,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204"/>
+        <Button Content="Guardar" HorizontalAlignment="Left" Margin="113,265,0,0" VerticalAlignment="Top" Width="204" Click="Button_Click" Style="{StaticResource btn-success}" />
+        <Label Content="Dirección" HorizontalAlignment="Left" Margin="40,160,0,0" VerticalAlignment="Top"/>
+        <Label Content="Telefóno" HorizontalAlignment="Left" Margin="40,195,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDireccion" HorizontalAlignment="Left" Height="23" Margin="113,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204"/>
+        <TextBox x:Name="txtTelefono" HorizontalAlignment="Left" Height="23" Margin="113,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="113,230,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204"/>
+        <TextBlock Name="lblTitulo" HorizontalAlignment="Left" Height="34" Margin="40,40,0,0" TextWrapping="Wrap" Text="Crear Empresa" VerticalAlignment="Top" Width="221" FontWeight="Bold" FontSize="22"/>
+        <Button Name="btnTrabajador" Content="Administrar Trabajadores" HorizontalAlignment="Left" Margin="40,392,0,0" VerticalAlignment="Top" Width="137" Click="btnTrabajador_Click" Style="{StaticResource btn-info}" Visibility="Collapsed" />
+        <Button Name="btnInstalacion" Content="Administrar Instalaciones" HorizontalAlignment="Left" Margin="182,392,0,0" VerticalAlignment="Top" Width="135" Click="btnInstalacion_Click" Style="{StaticResource btn-info}" Visibility="Collapsed" />
+        <Label Content="Email" HorizontalAlignment="Left" Margin="40,230,0,0" VerticalAlignment="Top"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="2" Margin="40,347,0,0" VerticalAlignment="Top" Width="277"/>
+
 
     </Grid>
 </Window>

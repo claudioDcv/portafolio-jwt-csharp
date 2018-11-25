@@ -45,6 +45,9 @@ namespace SafeAdmin.Mantenedores.Sistema.Empresa
                     txtTelefono.Text = oEmpresa.telefono;
                     txtEmail.Text = oEmpresa.email;
                     lblTitulo.Text = "Editar Empresa";
+
+                    btnInstalacion.Visibility = Visibility.Visible;
+                    btnTrabajador.Visibility = Visibility.Visible;
                 }
             }
             catch (Exception)
@@ -64,16 +67,20 @@ namespace SafeAdmin.Mantenedores.Sistema.Empresa
                 oEmpresa.direccion = txtDireccion.Text;
                 oEmpresa.telefono = txtTelefono.Text;
                 oEmpresa.email = txtEmail.Text;
-                int respuesta = default(int);
+                string respuesta = string.Empty;
+                int id = default(int);
                 if (oEmpresa.id > 0)
                 {
                     respuesta = oEmpresaServicios.update(oEmpresa);
-                    if (respuesta > 0)
+                    if (respuesta.Length > 0 && int.TryParse(respuesta, out id))
                     {
-                        MessageBox.Show("Empresa actualizada con exito.");
-                        Listar listar = new Listar(this.hash);
-                        listar.Show();
-                        this.Close();
+                        if(id > 0)
+                        {
+                            MessageBox.Show("Empresa actualizada con exito.");
+                            Listar listar = new Listar(this.hash);
+                            listar.Show();
+                            this.Close();
+                        }
                     }
                     else
                     {
@@ -83,7 +90,7 @@ namespace SafeAdmin.Mantenedores.Sistema.Empresa
                 else
                 {
                     respuesta = oEmpresaServicios.create(oEmpresa);
-                    if (respuesta > 0)
+                    if (respuesta.Length > 0 && int.TryParse(respuesta, out id))
                     {
                         MessageBox.Show("Empresa creada con exito.");
                         Listar listar = new Listar(this.hash);

@@ -71,6 +71,7 @@
     <Compile Include="Modelo\TipoRiesgo.cs" />
     <Compile Include="Modelo\Token.cs" />
     <Compile Include="Modelo\Trabajador.cs" />
+    <Compile Include="Modelo\UsuarioEmpresa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Servicios\Consumer.cs" />

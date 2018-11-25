@@ -35,7 +35,7 @@ namespace DTO.Servicios
             return oEmpresa.code == 200 ? oEmpresa.obj : new Empresa();
         }
 
-        public int create(Empresa empresa)
+        public string create(Empresa empresa)
         {
             ResponseSaveUsuario oUsuario = new ResponseSaveUsuario();
             object aux = new
@@ -48,10 +48,10 @@ namespace DTO.Servicios
             string json = JsonConvert.SerializeObject(aux);
             string content = consumer.getPost(this.endpoint, json);
             oUsuario = JsonConvert.DeserializeObject<ResponseSaveUsuario>(content);
-            return oUsuario.code == 200 ? oUsuario.obj : 0;
+            return oUsuario.code == 200 ? oUsuario.obj : "0";
         }
 
-        public int update(Empresa empresa)
+        public string update(Empresa empresa)
         {
             ResponseSaveUsuario oUsuario = new ResponseSaveUsuario();
             object aux = new
@@ -64,7 +64,7 @@ namespace DTO.Servicios
             string json = JsonConvert.SerializeObject(aux);
             string content = consumer.getPut(this.endpoint, json);
             oUsuario = JsonConvert.DeserializeObject<ResponseSaveUsuario>(content);
-            return oUsuario.code == 200 ? oUsuario.obj : 0;
+            return oUsuario.code == 200 ? oUsuario.obj : "0";
         }
     }
 }
