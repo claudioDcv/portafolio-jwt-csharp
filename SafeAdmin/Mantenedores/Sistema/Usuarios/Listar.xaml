@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:SafeAdmin.Mantenedores.Sistema.Usuarios"
         mc:Ignorable="d"
         Style="{StaticResource wnd-metro}"
+        WindowState="Maximized"
         Title="Listar" Height="503" Width="741">
 
     <Grid>

@@ -7,17 +7,16 @@
         xmlns:local="clr-namespace:SafeAdmin"
         mc:Ignorable="d"
         Style="{StaticResource wnd-metro}"
-        Title="Login" Height="324" Width="377">
-
+        Title="Login" Height="384" Width="377">
     <Grid>
         <TextBlock HorizontalAlignment="Left" Height="58" Margin="139,10,0,0" TextWrapping="Wrap" Text="LOGIN" VerticalAlignment="Top" Width="73" FontWeight="Bold" FontSize="22"/>
         <Label Content="Email" HorizontalAlignment="Left" Margin="27,145,0,0" VerticalAlignment="Top"/>
         <Label Content="Contraseña" HorizontalAlignment="Left" Margin="27,185,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.543,-1.059"/>
         <TextBox Name="txtEmail" HorizontalAlignment="Left" Height="22" Margin="108,145,0,0" Text="" VerticalAlignment="Top" Width="228" TextWrapping="NoWrap" />
         <PasswordBox Name="txtContrasena" HorizontalAlignment="Left" Height="23" Margin="108,184,0,0" VerticalAlignment="Top" Width="228"/>
-        <Button Name="btnIniciar" Content="Iniciar Sesión" HorizontalAlignment="Left" Margin="108,231,0,0" VerticalAlignment="Top" Width="228" Height="32" Click="btnIniciar_Click" Style="{StaticResource btn-info}" />
-        <Label Content="Host" Visibility="Collapsed" HorizontalAlignment="Left" Margin="270,204,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.543,-1.059"/>
-        <PasswordBox Visibility="Collapsed" x:Name="txtHost" HorizontalAlignment="Left" Height="23" Margin="372,207,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Name="btnIniciar" Content="Iniciar Sesión" HorizontalAlignment="Left" Margin="108,260,0,0" VerticalAlignment="Top" Width="228" Height="32" Click="btnIniciar_Click" Style="{StaticResource btn-info}" />
+        <Label Content="Host" HorizontalAlignment="Left" Margin="27,220,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.543,-1.059"/>
+        <TextBox x:Name="txtHost" HorizontalAlignment="Left" Height="23" Margin="108,220,0,0" VerticalAlignment="Top" Width="228"/>
         <Image HorizontalAlignment="Left" Height="73" Margin="100,54,0,0" VerticalAlignment="Top" Width="145" Source="Content/logoSafe.PNG"/>
 
     </Grid>

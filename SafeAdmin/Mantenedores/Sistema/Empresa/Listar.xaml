@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SafeAdmin.Mantenedores.Sistema.Empresa"
         mc:Ignorable="d"
+        WindowState="Maximized"
         Title="Listar" Height="511" Width="752">
     <Grid>
         <DataGrid x:Name="grdEmpresas" DataContext="{Binding Source=oEmpresas}" ItemsSource="{Binding Source=oEmpresas}" HorizontalAlignment="Left" Height="311" Margin="40,133,0,0" VerticalAlignment="Top" Width="659" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="grdEmpresas_SelectionChanged">

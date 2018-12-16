@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:SafeAdmin.Mantenedores.Sistema.Usuarios"
         mc:Ignorable="d"
         Style="{StaticResource wnd-metro}"
+        WindowState="Maximized"
         Title="Crear" Height="466.586" Width="789.962">
     <Grid Margin="0,0,0,0">
         <Grid.ColumnDefinitions>

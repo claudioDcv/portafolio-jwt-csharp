@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SafeAdmin.Mantenedores.Sistema.Examenes"
         mc:Ignorable="d"
+        WindowState="Maximized"
         Title="Listar" Height="423" Width="531">
     <Grid>
         <DataGrid Name="grdExamenes" ItemsSource="{Binding Source=oExamenes}" HorizontalAlignment="Left" Height="231" Margin="40,125,0,0" VerticalAlignment="Top" Width="433" AutoGenerateColumns="False">

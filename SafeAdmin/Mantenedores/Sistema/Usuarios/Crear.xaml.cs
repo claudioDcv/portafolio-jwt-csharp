@@ -97,6 +97,12 @@ namespace SafeAdmin.Mantenedores.Sistema.Usuarios
                 {
                     oUsuario.profiles.Add((Perfil)tmp);
                 }
+                if(oUsuario.profiles.Any(x => x.naturalKey == "ADMIN_EMPRESA"))
+                {
+                    Perfil oPerfil = oUsuario.profiles.Where(x => x.naturalKey == "ADMIN_EMPRESA").FirstOrDefault();
+                    oUsuario.profiles.Clear();
+                    oUsuario.profiles.Add(oPerfil);
+                }
                 string respuesta = string.Empty;
                 int id = default(int);
                 if (oUsuario.id > 0)
@@ -250,6 +256,9 @@ namespace SafeAdmin.Mantenedores.Sistema.Usuarios
                 }
                 if(oPerfiles.Any(x => x.naturalKey == "ADMIN_EMPRESA"))
                 {
+                    //lstPerfiles.SelectedItems.Clear();
+                    //Perfil oPerfil = oPerfiles.Where(x => x.naturalKey == "ADMIN_EMPRESA").FirstOrDefault();
+                    //lstPerfiles.SelectedItems.Add(oPerfil);
                     if (txtEmpresaID.Text == "0")
                     {
                         SeleccionarEmpresa seleccionarEmpresa = new SeleccionarEmpresa(this.hash, ref this.txtEmpresaID);

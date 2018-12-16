@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using DTO.Modelo;
 using Newtonsoft.Json;
 using System.Net.Http;
+using System.Configuration;
 
 namespace DTO.Servicios
 {
@@ -17,13 +18,15 @@ namespace DTO.Servicios
         string hash;
         public Consumer()
         {
-            this.client = new RestClient("http://192.168.0.19:4000");
+            string apiAddress = ConfigurationSettings.AppSettings["API"].ToString();
+            this.client = new RestClient(apiAddress);
             this.hash = string.Empty;
         }
 
         public Consumer(string hash)
         {
-            this.client = new RestClient("http://192.168.0.19:4000");
+            string apiAddress = ConfigurationSettings.AppSettings["API"].ToString();
+            this.client = new RestClient(apiAddress);
             this.hash = hash;
         }
 

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SafeAdmin.Mantenedores.Sistema.Personal"
         mc:Ignorable="d"
+        WindowState="Maximized"
         Title="Listar" Height="508" Width="755">
     <Grid>
         <DataGrid x:Name="grdTrabajadores" DataContext="{Binding Source=oTrabajadores}" ItemsSource="{Binding Source=oTrabajadores}" HorizontalAlignment="Left" Height="311" Margin="40,138,0,0" VerticalAlignment="Top" Width="659" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="grdTrabajadores_SelectionChanged">

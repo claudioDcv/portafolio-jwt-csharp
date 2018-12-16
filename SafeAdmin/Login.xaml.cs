@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Services = DTO.Servicios;
 using DTO.Modelo;
+using System.Configuration;
 
 namespace SafeAdmin
 {
@@ -32,7 +33,12 @@ namespace SafeAdmin
             {
                 string email = txtEmail.Text;
                 string pass = txtContrasena.Password;
+                string host = txtHost.Text;
 
+                if(host.Trim() != "")
+                {
+                    ConfigurationSettings.AppSettings["API"] = host;
+                }
                 Services.LoginServices loginServicio = new Services.LoginServices();
                 DTO.Modelo.Login oLogin = loginServicio.Autenticar(email, pass);
 

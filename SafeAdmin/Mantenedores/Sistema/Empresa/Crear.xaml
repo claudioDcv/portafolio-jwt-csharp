@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SafeAdmin.Mantenedores.Sistema.Empresa"
         mc:Ignorable="d"
+        WindowState="Maximized"
         Title="Crear" Height="490" Width="369.97">
     <Grid>
         <Label Content="Nombre" HorizontalAlignment="Left" Margin="40,125,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.018,0.533"/>

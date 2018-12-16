@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SafeAdmin.Mantenedores.Sistema.Riesgos"
         mc:Ignorable="d"
+        WindowState="Maximized"
         Title="Crear" Height="275" Width="360.5">
     <Grid>
         <TextBlock HorizontalAlignment="Left" Height="40" Margin="40,40,0,0" TextWrapping="Wrap" Text="Crear Tipo de Riesgo" VerticalAlignment="Top" Width="284" FontWeight="Bold" FontSize="22"/>

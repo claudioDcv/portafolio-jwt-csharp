@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SafeAdmin.Mantenedores.Sistema.Instalacion"
         mc:Ignorable="d"
+        WindowState="Maximized"
         Title="Crear" Height="301" Width="352">
     <Grid>
         <TextBlock Name="lblTitulo" HorizontalAlignment="Left" Margin="40,40,0,0" TextWrapping="Wrap" Text="Crear Instalación" VerticalAlignment="Top" Height="27" Width="188" FontWeight="Bold" FontSize="22"/>

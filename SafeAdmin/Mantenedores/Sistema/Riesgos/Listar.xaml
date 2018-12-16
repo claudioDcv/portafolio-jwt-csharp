@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:SafeAdmin.Mantenedores.Sistema.Riesgos"
         mc:Ignorable="d"
         Style="{StaticResource wnd-metro}"
+        WindowState="Maximized"
         Title="Listar" Height="515" Width="408">
     <Grid>
         <DataGrid x:Name="grdTipoRiesgos" DataContext="{Binding Source=oTipoRiesgos}" ItemsSource="{Binding Source=oUsuarios}" HorizontalAlignment="Left" Height="311" Margin="40,138,0,0" VerticalAlignment="Top" Width="317" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="grdTipoRiesgos_SelectionChanged">

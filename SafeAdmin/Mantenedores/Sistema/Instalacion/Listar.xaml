@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SafeAdmin.Mantenedores.Sistema.Instalacion"
         mc:Ignorable="d"
+        WindowState="Maximized"
         Title="Listar" Height="484.992" Width="381.669">
     <Grid>
         <DataGrid Name="grdInstalaciones" ItemsSource="{Binding Source=oInstalaciones}" HorizontalAlignment="Left" Height="286" Margin="40,129,0,0" VerticalAlignment="Top" Width="290" AutoGenerateColumns="False" SelectionChanged="grdInstalaciones_SelectionChanged">
