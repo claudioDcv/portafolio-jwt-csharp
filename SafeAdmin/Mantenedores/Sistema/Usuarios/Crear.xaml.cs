@@ -60,20 +60,20 @@ namespace SafeAdmin.Mantenedores.Sistema.Usuarios
                 {
                     lblEmpresa.Text = "Empresa Asignada: " + oEmpresaServicios.getOne(oUsuario.empresaFk).nombre;
                 }
+                txtEmpresaID.Text = oUsuario.empresaFk.ToString();
                 lblPassword.Visibility = Visibility.Collapsed;
                 txtPassword.Visibility = Visibility.Collapsed;
-                //foreach (var tmp in lstPerfiles.Items)
-                //{
-                //    if(oUsuario.profiles.Any(x => x.id == ((Perfil)tmp).id))
-                //    {
-                //        int indice = lstPerfiles.Items.IndexOf(tmp);
-                //        lstPerfiles.SelectedItems.Add(tmp);
-                //    }
-                //}
-                lstPerfiles.SelectedItems.Add(oUsuario.profiles);
+                foreach (var tmp in lstPerfiles.Items)
+                {
+                    if (oUsuario.profiles.Any(x => x.id == ((Perfil)tmp).id))
+                    {
+                        int indice = lstPerfiles.Items.IndexOf(tmp);
+                        lstPerfiles.SelectedItems.Add(tmp);
+                    }
+                }
+                //lstPerfiles.SelectedItems.Add(oUsuario.profiles);
                 lblTitulo.Content = "Editar Usuario";
                 btnBloquear.Visibility = Visibility.Visible;
-                txtEmpresaID.Text = oUsuario.empresaFk.ToString();
             }
             catch(Exception ex)
             {
